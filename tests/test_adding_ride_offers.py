@@ -1,7 +1,7 @@
 import unittest
 from run import app
 from flask import jsonify, json
-from app.models import User, Driver
+from app.models import Driver
 from app import views
 
 class Test_Ride_Offers(unittest.TestCase):

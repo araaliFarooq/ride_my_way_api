@@ -1,7 +1,7 @@
 """ functionality to run the created models"""
 from app import app
-import random, json
-from flask import Flask, request, json, jsonify
+import json
+from flask import request, json, jsonify
 from app.models import User, Driver, RideOffer, RideRequest
 
 
@@ -13,8 +13,7 @@ all_requests = []
 
 """registering new user"""
 @app.route("/api/v1/register", methods=["POST"])
-def register():
-    
+def register(): 
     data = request.get_json()
     firstname = data.get("firstname")
     secondname = data.get("secondname")
