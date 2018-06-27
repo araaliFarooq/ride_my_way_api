@@ -13,7 +13,7 @@ all_requests = []
 
 """registering new user"""
 @app.route("/api/v1/register", methods=["POST"])
-def register(): 
+def register():
     data = request.get_json()
     firstname = data.get("firstname")
     secondname = data.get("secondname")
