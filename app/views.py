@@ -129,8 +129,9 @@ def get_single_ride(ride_id):
             for offer in all_offers:
                 if offer.id == int(ride_id):
                     return jsonify({
+                        "message":"Successfully viewed single offer",
                         "Ride offer": offer.__dict__
-                    })
+                    }),200
             return jsonify({
                 "message":"Request doesnot exist"
             })
@@ -147,22 +148,22 @@ def send_ride_request(user_id,offer_id):
 
     if len(all_offers) > 0:
         for offer in all_offers:
-            if int(offer["id"]) == int(offer_id):
-                request_id = offer["id"]
-                location = offer["location"]
+            if int(offer.id) == int(offer_id):
+                request_id = offer.id
+                location = offer.location
 
     for user in Users:
-       if int(user["id"]) == int(user_id):
+       if int(user.id) == int(user_id):
            request_data ={
                "Ride ID": request_id,
-               "Requester ID": user["id"],
-               "Clients Name": user["firstname"] +" "+ user["secondname"],
-               "Phone Number": user["contact"],
+               "Requester ID": user.id,
+               "Clients Name": user.firstname +" "+ user.secondname,
+               "Phone Number": user.contact,
                "Location": location
            }
     id = len(all_requests) + 1       
-    client_name = user["firstname"] +" "+ user["secondname"]
-    phone_num = user["contact"]
+    client_name = user.firstname +" "+ user.secondname
+    phone_num = user.contact
     address = location
 
     new_request = RideRequest(id, client_name, phone_num, address)
