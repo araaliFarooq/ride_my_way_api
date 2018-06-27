@@ -1,7 +1,6 @@
 import unittest
-from app import models, views
+from app import views
 from run import app
-from flask import jsonify
 import json
 
 class Test_Viewing_Offers(unittest.TestCase):

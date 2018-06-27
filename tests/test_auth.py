@@ -14,8 +14,7 @@ class Test_auth(unittest.TestCase):
             content_type='application/json',
             data=json.dumps(dict(firstname="shakira",secondname="kyra",username="kyooq",
                                 contact="0888887676",user_category="driver",password="farooq",car_type="rover",reg_num="uab1234",lic_num="4567789999"),)
-            )  
-               
+            )      
         reply = json.loads(response.data)
         self.assertEquals(reply["message"], "New Driver successfully registered")
         self.assertEquals(response.status_code, 201)
@@ -128,8 +127,8 @@ class Test_auth(unittest.TestCase):
         self.assertEquals(response.status_code, 200)
 
 
-        def test_user_login_with_wrong_or_no_password(self):
-            """ Test for login with wrong or no password """
+    def test_user_login_with_wrong_or_no_password(self):
+        """ Test for login with wrong or no password """
                       
         response = self.app.post(
                 "/api/v1/login",
@@ -142,8 +141,8 @@ class Test_auth(unittest.TestCase):
         self.assertEquals(response.status_code, 400)
 
 
-        def test_user_login_with_wrong_or_no_username(self):
-            """ Test for login with wrong or no username """
+    def test_user_login_with_wrong_or_no_username(self):
+        """ Test for login with wrong or no username """
                       
         response = self.app.post(
                 "/api/v1/login",
