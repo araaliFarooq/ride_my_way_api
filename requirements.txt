@@ -1,6 +1,4 @@
-adium-theme-ubuntu==0.3.4
 astroid==1.6.3
-backports.functools-lru-cache==1.5
 click==6.7
 configparser==3.5.0
 coverage==5.0a1
@@ -24,10 +22,8 @@ pylint==1.8.4
 singledispatch==3.4.0.3
 six==1.11.0
 SQLAlchemy==1.2.6
-unity-lens-photos==1.0
 virtualenv==15.2.0
 Werkzeug==0.14.1
 wrapt==1.10.11
 WTForm==1.0
 WTForms==2.1
-youtube-dl==2017.12.31
